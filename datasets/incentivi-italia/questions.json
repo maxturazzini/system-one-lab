@@ -1,0 +1,73 @@
+{
+  "finalita": {
+    "type": "choice",
+    "instructions": "Indica la finalità principale dell’incentivo usando soltanto titolo, ente, territorio e descrizione. Ignora profilo_azienda.",
+    "criteria": {
+      "investimenti": "Acquisto di macchinari, impianti, beni strumentali, ristrutturazioni o altri investimenti produttivi.",
+      "liquidita": "Accesso al credito, liquidità, abbattimento degli interessi o sostegno al circolante.",
+      "internazionalizzazione": "Export, fiere, promozione e presenza sui mercati esteri.",
+      "innovazione_ricerca": "Ricerca, sviluppo sperimentale, brevetti, innovazione di prodotto o di processo.",
+      "digitalizzazione": "Tecnologie digitali, software, e-commerce, cloud, sicurezza informatica o intelligenza artificiale.",
+      "transizione_ecologica": "Efficienza energetica, rinnovabili, economia circolare, riduzione delle emissioni.",
+      "startup_sviluppo_impresa": "Nascita di nuove imprese, start-up innovative, avvio o consolidamento di un’attività.",
+      "crisi_impresa": "Imprese in difficoltà, ristrutturazione aziendale, ristori o calamità.",
+      "inclusione_sociale": "Economia sociale, terzo settore, inserimento lavorativo di persone svantaggiate.",
+      "imprenditoria_giovanile": "Misure riservate o dedicate ai giovani imprenditori.",
+      "imprenditoria_femminile": "Misure riservate o dedicate alle imprese femminili.",
+      "formazione_lavoro": "Formazione del personale, occupazione, assunzioni o riqualificazione dei lavoratori.",
+      "rafforzamento_capitale": "Aumenti di capitale, patrimonializzazione o ingresso di investitori."
+    }
+  },
+  "forma_agevolazione": {
+    "type": "choice",
+    "instructions": "Indica la forma principale dell’aiuto descritto nella scheda. Ignora profilo_azienda.",
+    "criteria": {
+      "fondo_perduto": "Contributo o voucher a fondo perduto, da non restituire.",
+      "prestito_agevolato": "Finanziamento, prestito o anticipo da restituire a condizioni agevolate.",
+      "agevolazione_fiscale": "Credito d’imposta, deduzione, esenzione o altra agevolazione fiscale.",
+      "capitale_di_rischio": "Ingresso nel capitale dell’impresa, fondi di investimento o venture capital.",
+      "garanzia": "Garanzia pubblica o consortile su un finanziamento.",
+      "decontribuzione": "Riduzione o esonero dei contributi previdenziali sulle assunzioni."
+    }
+  },
+  "grande_impresa_ammessa": {
+    "type": "boolean",
+    "instructions": "Una grande impresa, con 250 dipendenti o più, può presentare domanda? Usa soltanto la scheda e ignora profilo_azienda.",
+    "criteria": {
+      "true": "La scheda ammette anche le grandi imprese, oppure non limita i beneficiari per dimensione.",
+      "false": "La scheda riserva l’incentivo a micro, piccole e medie imprese, start-up, professionisti o soggetti diversi dalle grandi imprese."
+    }
+  },
+  "interesse_per_profilo": {
+    "type": "score",
+    "instructions": "Quanto vale la pena, per l’impresa descritta in profilo_azienda, leggere il bando completo? Considera territorio, dimensione, settore, obiettivi e scadenza.",
+    "criteria": [
+      "Nessuno: territorio, dimensione o finalità escludono l’impresa.",
+      "Basso: collegamento debole con gli obiettivi dell’impresa.",
+      "Medio: incentivo plausibile, da verificare nel bando.",
+      "Alto: territorio, dimensione e finalità coincidono con gli obiettivi dell’impresa."
+    ]
+  },
+  "copertura_formazione_ai": {
+    "type": "choice",
+    "instructions": "Che cosa copre l'incentivo rispetto a formazione e adozione dell'intelligenza artificiale? Usa soltanto la scheda: ignora profilo_azienda e profilo_fornitore.",
+    "criteria": {
+      "formazione_ai_esplicita": "La scheda cita formazione, competenze o alfabetizzazione sull'intelligenza artificiale.",
+      "adozione_ai": "La scheda finanzia l'adozione di soluzioni di intelligenza artificiale, anche senza parlare di formazione.",
+      "formazione_generica": "La scheda copre formazione del personale o competenze digitali, senza riferimenti espliciti all'AI.",
+      "consulenza_o_digitale": "La scheda copre consulenza, servizi digitali o investimenti tecnologici in cui la formazione AI non è il bisogno principale.",
+      "nessuna_copertura": "La scheda non finanzia niente di riconducibile a formazione, digitale o intelligenza artificiale."
+    }
+  },
+  "servizio_finanziabile": {
+    "type": "choice",
+    "instructions": "Quale servizio fra quelli elencati in profilo_fornitore potrebbe rientrare nelle spese ammissibili di questo incentivo?",
+    "criteria": {
+      "academy": "Percorsi e-learning di AI literacy, licenze per team o contenuti su misura.",
+      "workshop_o_coaching": "Workshop live oppure percorsi di coaching pratico.",
+      "ai_team_o_advisory": "Costituzione dell'AI-Team, mentoring, governance, policy o KPI di adozione.",
+      "co_delivery": "Sviluppo congiunto di agenti, RAG, automazioni o integrazioni.",
+      "nessuno": "Nessuno dei servizi rientrerebbe in modo credibile fra le spese ammissibili."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1278 367.88" role="img" aria-labelledby="title desc">
+  <title id="title">AI, MAX</title>
+  <desc id="desc">Logo statico AI, MAX: foglia bianca, AI e virgola con gradiente ufficiale, MAX nero.</desc>
+  <defs>
+    <linearGradient id="aimaxPngGradient" gradientUnits="userSpaceOnUse" x1="135" y1="80" x2="455" y2="325">
+      <stop offset="0" stop-color="#0AA3FD"/>
+      <stop offset="0.48" stop-color="#2589FE"/>
+      <stop offset="1" stop-color="#6E72FE"/>
+    </linearGradient>
+  </defs>
+  <path d="M1094.06,0H183.94A183.936,183.936,0,0,0,0,183.94V367.88H1094.06A183.936,183.936,0,0,0,1278,183.94A183.936,183.936,0,0,0,1094.06,0Z" fill="#fff"/>
+  <path d="M694.9,279.41l3.53-143.15L658.86,279.41H620.3L580.99,136.26l3.53,143.15H541.17V101.48h65.02l33.52,124.49,33.01-124.49h65.02V279.4H694.9Z"/>
+  <path d="M885.44,279.41l-8.82-28.48H811.1l-8.82,28.48H754.9l66.03-177.92H867.3l65.52,177.92H885.44ZM843.35,143.83l-21.93,75.1h45.11l-23.19-75.1Z"/>
+  <path d="M1076.22,279.41l-45.61-67.29-46.12,67.29H933.58l68.8-96.52-59.22-81.4h52.67l34.27,53.68,34.78-53.68h51.66l-58.72,81.4,69.56,96.52h-51.16Z"/>
+  <path d="M193.13,95.33,126.24,275.57h48l8.94-28.85h66.38l8.94,28.85h48L240.12,95.33H193.14Zm.51,118.97,22.21-76.08,23.49,76.08h-45.7ZM369.3,95.33V275.57H324.37V95.33Zm29.62,224.41V301.61c12.51-4.59,14.3-14.04,15.32-26.04H398.67V232.68h40.85v34.98c0,30.13-11.49,44.42-40.59,52.08Z" fill="url(#aimaxPngGradient)"/>
+</svg>

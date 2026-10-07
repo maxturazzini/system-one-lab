@@ -1,0 +1,8 @@
+node_modules/
+.env
+.DS_Store
+samples/public-snapshot.json
+results/
+
+# Dataset privato: profilo commerciale MTX, non si pubblica
+datasets/ted-art4/

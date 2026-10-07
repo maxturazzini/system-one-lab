@@ -1,0 +1,20 @@
+{
+  "name": "CPSC product recalls",
+  "owner": "U.S. Consumer Product Safety Commission",
+  "businessQuestion": "Come classificare rischio, severità e rimedio operativo di un richiamo prodotto?",
+  "sourceUrl": "https://www.cpsc.gov/Recalls",
+  "apiUrl": "https://www.saferproducts.gov/RestWebServices/Recall",
+  "license": "Dati pubblici del governo statunitense",
+  "freshness": "Aggiornamento settimanale, rimedi aggiornabili più spesso",
+  "warning": "Un richiamo pubblicato è già un caso confermato. Il test misura la lettura semantica del record, non la capacità di prevedere un richiamo futuro.",
+  "queryLabel": "Filtro facoltativo sul pericolo",
+  "queryPlaceholder": "es. fire, choking, lead",
+  "maxBatch": 3,
+  "order": 40,
+  "source": {
+    "adapter": "cpsc",
+    "params": {
+      "days": 120
+    }
+  }
+}

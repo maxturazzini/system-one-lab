@@ -1,0 +1,67 @@
+{
+  "sales_route": {
+    "type": "choice",
+    "instructions": "Instrada il bando al team commerciale più pertinente usando soltanto le informazioni visibili nello state.",
+    "criteria": {
+      "digital_it": "Software, hardware, telecomunicazioni, servizi informatici, dati o trasformazione digitale.",
+      "healthcare_life_sciences": "Sanità, servizi sociali, dispositivi medici, farmaci o scienze della vita.",
+      "construction_infrastructure": "Lavori edili, materiali da costruzione, progettazione, architettura o infrastrutture.",
+      "transport_logistics": "Veicoli, mobilità, trasporto, logistica, magazzini o servizi di viaggio.",
+      "energy_environment_utilities": "Energia, acqua, rifiuti, ambiente, bonifiche o servizi di pubblica utilità.",
+      "professional_business_services": "Consulenza, ricerca, finanza, assicurazioni, marketing, legale o servizi professionali.",
+      "education_culture": "Formazione, istruzione, cultura, sport, eventi o servizi ricreativi.",
+      "food_agriculture_hospitality": "Agricoltura, alimenti, ristorazione, hotel o servizi collegati.",
+      "industrial_goods_maintenance": "Macchinari, prodotti industriali, arredi, chimica, manutenzione o installazione tecnica.",
+      "other_public_personal": "Amministrazione pubblica, servizi personali o un settore diverso dai precedenti."
+    }
+  },
+  "contract_nature": {
+    "type": "choice",
+    "instructions": "Determina la natura principale del contratto dalla formulazione del titolo.",
+    "criteria": {
+      "services": "Prestazione di servizi o attività continuativa.",
+      "supplies": "Fornitura o acquisto di prodotti, materiali o apparecchiature.",
+      "works": "Esecuzione di lavori, costruzioni o opere.",
+      "other": "Natura diversa o non determinabile."
+    }
+  },
+  "aimax_relevance": {
+    "type": "score",
+    "instructions": "Valuta la rilevanza commerciale per una PMI italiana che offre formazione, consulenza e progetti su AI generativa, agenti e automazione dei processi.",
+    "criteria": [
+      "Nessuna: settore e bisogno non hanno relazione concreta con i servizi offerti.",
+      "Debole: possibile connessione indiretta, ma il bando richiede principalmente altre competenze.",
+      "Interessante: esiste un bisogno digitale, formativo o consulenziale plausibilmente pertinente.",
+      "Forte: il titolo indica direttamente AI, automazione, formazione digitale o consulenza tecnologica."
+    ]
+  },
+  "human_review": {
+    "type": "boolean",
+    "instructions": "Vale la pena far leggere il bando completo a una persona del team commerciale AI, MAX?",
+    "criteria": {
+      "true": "Esiste una connessione plausibile con AI, formazione, consulenza o automazione, oppure il titolo è abbastanza ambiguo da meritare verifica.",
+      "false": "Il bando è chiaramente estraneo ai servizi AI, MAX."
+    }
+  },
+  "academy_fit": {
+    "type": "choice",
+    "instructions": "Valuta la compatibilità del bando con l'Academy descritta in profilo_azienda, usando soltanto titolo, committente e data.",
+    "criteria": {
+      "catalogo": "Il bisogno principale sembra formazione diffusa su intelligenza artificiale, AI literacy o AI Act, coperta dai percorsi già esistenti.",
+      "academy_su_misura": "Formazione AI scalabile che richiederebbe contenuti per ruolo, lingue, integrazioni con la piattaforma del committente o deployment dedicati.",
+      "complemento": "L'Academy può servire come modulo di un programma più ampio, non come risposta principale al bando.",
+      "nessun_fit": "Il bando non riguarda formazione o adozione dell'intelligenza artificiale."
+    }
+  },
+  "servizio_piu_adatto": {
+    "type": "choice",
+    "instructions": "Quale servizio fra quelli elencati in profilo_azienda risponde meglio al bisogno visibile? Le probabilità sulle altre opzioni indicano i servizi secondari plausibili.",
+    "criteria": {
+      "academy": "Percorsi e-learning di AI literacy, licenze per team o contenuti su misura.",
+      "workshop_o_coaching": "Workshop live oppure percorsi di coaching pratico.",
+      "ai_team_o_advisory": "Costituzione dell'AI-Team, mentoring, governance, policy o KPI di adozione.",
+      "co_delivery": "Sviluppo congiunto di agenti, RAG, automazioni o integrazioni.",
+      "nessuno": "Nessuno dei servizi risponde in modo credibile al bisogno principale."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "CLINC150 · centralino bancario e richieste fuori perimetro",
+  "owner": "Clinc e University of Michigan",
+  "businessQuestion": "Jev sa instradare la richiesta di un cliente al reparto giusto e, soprattutto, sa riconoscere quando nessun reparto è quello giusto?",
+  "sourceUrl": "https://github.com/clinc/oos-eval",
+  "apiUrl": "https://raw.githubusercontent.com/clinc/oos-eval/master/data/data_full.json",
+  "license": "CC BY 3.0",
+  "freshness": "Dataset statico: 900 richieste bancarie e 1.000 fuori perimetro nello split di test",
+  "warning": "Circa il 40% dei record è fuori perimetro (classe oos) e non appartiene a nessun reparto. Nella domanda senza uscita ogni scelta su questi record è sbagliata per costruzione: il dato da guardare è quanto Jev è sicuro mentre sbaglia. I 30 intenti bancari originali sono raggruppati in 5 reparti con una normalizzazione dichiarata nel codice. Testi in inglese.",
+  "queryLabel": "Parola facoltativa nella richiesta",
+  "queryPlaceholder": "es. card, transfer, weather",
+  "maxBatch": 3,
+  "order": 80,
+  "staticState": {
+    "canale": "Chat del servizio clienti di una banca retail"
+  },
+  "source": {
+    "adapter": "clinc",
+    "params": {
+      "outOfScopeShare": 0.4
+    }
+  }
+}

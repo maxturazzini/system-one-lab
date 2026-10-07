@@ -1,0 +1,46 @@
+{
+  "primary_hazard": {
+    "type": "choice",
+    "instructions": "Classify the primary consumer-safety hazard described in the recall record.",
+    "criteria": {
+      "choking": "Choking or airway obstruction.",
+      "poisoning": "Poisoning, toxic exposure, lead, chemicals, or ingestion of a toxic substance.",
+      "fire_burn": "Fire, overheating, explosion, or burn hazard.",
+      "electrical": "Electrical shock, electrocution, battery, or electrical malfunction.",
+      "fall_entrapment": "Fall, tip-over, collapse, entrapment, or crushing hazard.",
+      "ingestion": "Non-toxic foreign-object ingestion, swallowed parts, magnets, or internal injury.",
+      "laceration": "Cuts, sharp edges, breakage, or laceration hazard.",
+      "other": "A different primary hazard."
+    }
+  },
+  "severity": {
+    "type": "score",
+    "instructions": "Rate the business response severity using hazard, injuries, affected population, and reported incidents.",
+    "criteria": [
+      "Low: limited inconvenience and no credible injury pathway.",
+      "Moderate: credible injury risk but low exposure or no serious incidents reported.",
+      "High: serious injury pathway, vulnerable users, large exposure, or reported treatment.",
+      "Critical: death risk, deaths, severe injuries, mandatory-standard violation, or urgent broad exposure."
+    ]
+  },
+  "customer_action": {
+    "type": "choice",
+    "instructions": "Choose the primary customer remedy described by the official recall.",
+    "criteria": {
+      "refund": "Full or partial refund, credit, or reimbursement.",
+      "repair": "Repair, retrofit, or corrective part.",
+      "replace": "Replacement product or component.",
+      "dispose": "Dispose of or destroy the product without another primary remedy.",
+      "new_instructions": "New use, warning, or safety instructions are the primary remedy.",
+      "other": "Another remedy or no clear remedy."
+    }
+  },
+  "executive_escalation": {
+    "type": "boolean",
+    "instructions": "Should a retailer or manufacturer escalate this recall to senior operations, legal, or risk leadership immediately?",
+    "criteria": {
+      "true": "Serious injury or death risk, vulnerable users, broad exposure, regulatory violation, or material brand impact.",
+      "false": "Narrow, low-severity operational response with limited exposure."
+    }
+  }
+}

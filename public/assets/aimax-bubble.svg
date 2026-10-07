@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 400" width="440" height="400">
+  <defs>
+    <linearGradient id="bodyGrad" gradientUnits="userSpaceOnUse" x1="80" y1="38" x2="360" y2="270">
+      <stop offset="0%" stop-color="#35C2FF"/>
+      <stop offset="100%" stop-color="#00D35D"/>
+    </linearGradient>
+    <linearGradient id="sideGrad" gradientUnits="userSpaceOnUse" x1="80" y1="38" x2="360" y2="270">
+      <stop offset="0%" stop-color="#2997c6"/>
+      <stop offset="100%" stop-color="#00a448"/>
+    </linearGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <g id="hand">
+      <path d="M -8 -6
+        C -11.5 -4.5, -13.5 -1, -13.8 3
+        C -19.5 3.2, -24 7.8, -23 12.2
+        C -22 15.6, -18 16, -15.2 13.2
+        C -14.5 12.5, -13.9 11.7, -13.5 11
+        C -13.4 14.5, -12.5 18, -10.5 20.5
+        C -9 22.4, -6 22.6, -4.8 20.3
+        C -4.4 19.5, -4.1 18.8, -3.9 18.2
+        C -3.3 21.5, -1 23.8, 1.8 23
+        C 3.8 22.4, 4.8 20.4, 4.6 18
+        C 4.9 18.4, 5.2 18.9, 5.6 19.3
+        C 7.5 21.5, 10.5 20.8, 11.8 17.8
+        C 13.8 13, 13.8 4, 9.8 -2.5
+        C 8.2 -5, 6 -6.2, 3.8 -6.4
+        Z"/>
+    </g>
+    <g id="bubbleShape">
+      <path d="M 80 134 C 80 80.97, 142.68 38, 220 38 C 297.32 38, 360 80.97, 360 134 C 360 187.03, 297.32 230, 220 230 C 142.68 230, 80 187.03, 80 134 Z"/>
+      <path d="M 138 196 L 196 210 L 116 272 Z"/>
+    </g>
+  </defs>
+
+  <ellipse cx="220" cy="358" rx="130" ry="16" fill="url(#shadowGrad)"/>
+
+  <path d="M 188 190 L 188 341 Q 188 349, 176 349" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 252 190 L 252 341 Q 252 349, 264 349" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M 95 185 C 66 210, 52 250, 56 286" fill="none" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
+  <use href="#hand" transform="translate(56,286) scale(-1,1) rotate(-14)" fill="#1a1a1a"/>
+  <path d="M 345 185 C 374 210, 388 250, 384 286" fill="none" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
+  <use href="#hand" transform="translate(384,286) rotate(-14)" fill="#1a1a1a"/>
+
+  <g fill="url(#sideGrad)">
+    <use href="#bubbleShape" transform="translate(1,1.15)"/>
+    <use href="#bubbleShape" transform="translate(2,2.3)"/>
+    <use href="#bubbleShape" transform="translate(3,3.45)"/>
+    <use href="#bubbleShape" transform="translate(4,4.6)"/>
+    <use href="#bubbleShape" transform="translate(5,5.75)"/>
+    <use href="#bubbleShape" transform="translate(6,6.9)"/>
+    <use href="#bubbleShape" transform="translate(7,8)"/>
+  </g>
+  <use href="#bubbleShape" fill="url(#bodyGrad)"/>
+
+  <ellipse cx="181.5" cy="125" rx="12.25" ry="27" fill="#ffffff"/>
+  <ellipse cx="258.5" cy="125" rx="12.25" ry="27" fill="#ffffff"/>
+</svg>

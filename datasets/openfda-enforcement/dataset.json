@@ -1,0 +1,18 @@
+{
+  "name": "openFDA enforcement reports",
+  "owner": "U.S. Food and Drug Administration",
+  "businessQuestion": "Jev sa stimare la classe di rischio di un richiamo senza vedere la classificazione ufficiale FDA?",
+  "sourceUrl": "https://open.fda.gov/apis/food/enforcement/",
+  "apiUrl": "https://api.fda.gov/{food|drug|device}/enforcement.json",
+  "license": "Dati openFDA, consultare licenza e disclaimer della fonte",
+  "freshness": "Aggiornamento settimanale",
+  "warning": "La classe FDA viene nascosta a Jev e usata come riferimento. openFDA non va usato per decisioni mediche, avvisi al pubblico o monitoraggio completo del ciclo di vita del richiamo.",
+  "queryLabel": "Parola facoltativa nella motivazione",
+  "queryPlaceholder": "es. contamination, labeling, sterility",
+  "maxBatch": 3,
+  "order": 30,
+  "source": {
+    "adapter": "openfda",
+    "params": {}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Safety Gate UE · prodotti pericolosi, in italiano",
+  "owner": "Commissione europea",
+  "businessQuestion": "Un prodotto è stato segnalato come pericoloso in Europa: che rischio presenta e quale misura è stata presa?",
+  "sourceUrl": "https://ec.europa.eu/safety-gate-alerts/screen/webReport",
+  "apiUrl": "https://ec.europa.eu/safety-gate-alerts/api/download/weeklyReport/list/xml/it",
+  "license": "Dati pubblici della Commissione europea, riutilizzabili secondo le note legali UE",
+  "freshness": "Report settimanale, pubblicato ogni venerdì",
+  "warning": "Tipo di rischio, livello e misure adottate sono nascosti a Jev. La descrizione del pericolo spesso nomina il rischio, quindi il tipo di rischio è il test facile e la misura adottata quello difficile. Quasi tutte le allerte sono classificate come rischio grave: per questo il livello non è una domanda.",
+  "queryLabel": "Parola facoltativa nel prodotto o nel pericolo",
+  "queryPlaceholder": "es. giocattolo, batteria, formaldeide",
+  "maxBatch": 3,
+  "order": 60,
+  "source": {
+    "adapter": "safety-gate",
+    "params": {
+      "maxReports": 4
+    }
+  }
+}

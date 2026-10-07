@@ -1,0 +1,22 @@
+{
+  "name": "Email in arrivo a una PMI · esempio da copiare",
+  "owner": "Dati sintetici scritti per il lab",
+  "businessQuestion": "Jev sa smistare la posta di una PMI fra amministrazione, assistenza e commerciale, riconoscere cosa scartare e cosa è urgente?",
+  "sourceUrl": "",
+  "license": "Dati sintetici, riutilizzabili liberamente",
+  "freshness": "Dodici record fissi in records.jsonl",
+  "warning": "Email inventate. Per provare il vostro processo copiate questa cartella, sostituite records.jsonl con una ventina di esempi vostri, ognuno con le etichette giuste in expected, e adattate le domande. Con Jev i record escono dal computer: usate dati sintetici o anonimizzati. Con SemIf restano sul vostro computer.",
+  "queryLabel": "Parola facoltativa nell'email",
+  "queryPlaceholder": "es. fattura, guasto, preventivo",
+  "maxBatch": 3,
+  "order": 90,
+  "staticState": {
+    "azienda": "PMI metalmeccanica che produce componenti su disegno e fa assistenza sulle proprie macchine"
+  },
+  "source": {
+    "adapter": "local",
+    "params": {
+      "file": "records.jsonl"
+    }
+  }
+}

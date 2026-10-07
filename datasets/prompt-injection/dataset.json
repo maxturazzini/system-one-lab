@@ -1,0 +1,32 @@
+{
+  "name": "Prompt injection · il guardiano dell’agente",
+  "owner": "deepset, dataset pubblico su Hugging Face",
+  "businessQuestion": "Il messaggio in arrivo cerca di cambiare istruzioni o compito all’assistente AI? Va fermato prima che l’agente agisca?",
+  "sourceUrl": "https://huggingface.co/datasets/deepset/prompt-injections",
+  "apiUrl": "https://datasets-server.huggingface.co/rows",
+  "license": "Apache 2.0",
+  "freshness": "Dataset statico, 116 messaggi di test",
+  "warning": "L’etichetta di deepset considera injection anche le richieste che assegnano all’assistente un compito diverso, come giochi di ruolo o generazione di codice, oltre agli attacchi espliciti. I messaggi sono soprattutto in inglese e tedesco, con qualche caso in altre lingue. Il lab carica metà messaggi legittimi e metà manipolatori.",
+  "queryLabel": "Parola facoltativa nel messaggio",
+  "queryPlaceholder": "es. ignore, prompt, vergiss",
+  "maxBatch": 3,
+  "order": 70,
+  "staticState": {
+    "contesto": "Assistente AI sul sito di un quotidiano. Risponde alle domande dei lettori basandosi sugli articoli pubblicati e non svolge altri compiti."
+  },
+  "source": {
+    "adapter": "hf-binary",
+    "params": {
+      "dataset": "deepset/prompt-injections",
+      "config": "default",
+      "split": "test",
+      "textField": "text",
+      "labelField": "label",
+      "positiveValue": 1,
+      "textKey": "messaggio_in_arrivo",
+      "expectedKey": "tentativo_di_manipolazione",
+      "positiveShare": 0.5,
+      "summary": "Messaggio in arrivo all’assistente AI di un quotidiano"
+    }
+  }
+}

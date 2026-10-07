@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Jev Business Decision Lab</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">AI, MAX · EXPERIMENT 01</p>
+        <h1>Jev Business<br>Decision Lab</h1>
+        <p class="lede">Decisioni probabilistiche su dati pubblici reali. Nessun dato aziendale necessario.</p>
+      </div>
+      <div class="brand-mark">
+        <img class="brand-logo" src="/assets/aimax-logo.svg" alt="AI, MAX">
+        <img class="brand-bubble" src="/assets/aimax-bubble.svg" alt="" aria-hidden="true">
+      </div>
+    </header>
+
+    <main>
+      <section class="notice" aria-labelledby="privacy-title">
+        <div class="notice-icon">!</div>
+        <div>
+          <h2 id="privacy-title">Regola del laboratorio</h2>
+          <p>Usate dati pubblici o sintetici. Il lab non salva input e risultati, ma Jev proprietario richiede un provider con fatturazione attiva. Vercel e Cloudflare chiedono entrambi credito o carta per questo modello third-party. SemIf, nella sezione Decisione, gira gratis su questo computer.</p>
+        </div>
+        <div id="providerStatus" class="status-chip pending">Controllo provider…</div>
+      </section>
+
+      <section class="workspace">
+        <aside class="dataset-panel">
+          <div class="section-heading">
+            <span>01</span>
+            <div>
+              <h2>Dati pubblici</h2>
+              <p>Scegliete una fonte ufficiale.</p>
+            </div>
+          </div>
+
+          <label for="datasetSelect">Dataset</label>
+          <select id="datasetSelect"></select>
+
+          <div id="datasetMeta" class="dataset-meta"></div>
+
+          <label for="datasetQuery" id="datasetQueryLabel">Filtro facoltativo</label>
+          <input id="datasetQuery" type="search" autocomplete="off">
+
+          <div class="inline-fields">
+            <div>
+              <label for="datasetLimit">Record</label>
+              <select id="datasetLimit">
+                <option value="5">5</option>
+                <option value="8" selected>8</option>
+                <option value="12">12</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+            <button id="loadDataset" class="button secondary" type="button">Carica</button>
+          </div>
+
+          <p id="datasetMessage" class="message" role="status"></p>
+          <div id="recordList" class="record-list" aria-live="polite"></div>
+          <button id="runBatch" class="button batch-button" type="button" disabled>Valuta batch con Jev</button>
+          <button id="runSemifBatch" class="button batch-button semif" type="button" disabled>Batch con SemIf in locale</button>
+        </aside>
+
+        <section class="editor-panel">
+          <div class="section-heading">
+            <span>02</span>
+            <div>
+              <h2>Decisione</h2>
+              <p>Lo state va a Jev. Le etichette ufficiali restano nascoste.</p>
+            </div>
+          </div>
+
+          <div id="selectedRecord" class="selected-record empty">
+            Caricate un dataset e scegliete un record, oppure scrivete uno state manualmente.
+          </div>
+
+          <label for="stateInput">State, testo o JSON</label>
+          <textarea id="stateInput" rows="13" spellcheck="false" placeholder="Se il contenuto è JSON valido verrà inviato come oggetto; altrimenti come testo."></textarea>
+
+          <div class="editor-toolbar">
+            <label for="questionsInput">Domande per Jev</label>
+            <div class="toolbar-actions">
+              <button id="formatJson" class="text-button hidden" type="button">Formatta JSON</button>
+              <button id="toggleQuestionsView" class="text-button" type="button">Modifica JSON</button>
+            </div>
+          </div>
+          <div id="questionsPreview" class="questions-preview empty" aria-live="polite"></div>
+          <textarea id="questionsInput" class="hidden" rows="20" spellcheck="false"></textarea>
+
+          <section class="semif-box" aria-labelledby="semif-title">
+            <div class="semif-head">
+              <div>
+                <h3 id="semif-title">SemIf, il parallelo locale</h3>
+                <p>Il codice originale di <a href="https://openjev.com/" target="_blank" rel="noreferrer">SemIf</a> gira su questo computer, accanto al lab, con un modello aperto: niente chiave, niente carta, lo state non lascia il computer. Solo i pesi del modello arrivano da Hugging Face, una volta.</p>
+              </div>
+              <div id="semifStatus" class="status-chip pending">Controllo SemIf…</div>
+            </div>
+            <div class="inline-fields">
+              <div>
+                <label for="semifModel">Modello locale</label>
+                <select id="semifModel"></select>
+              </div>
+              <button id="semifLoad" class="button secondary" type="button">Carica modello</button>
+            </div>
+            <progress id="semifProgress" class="semif-progress hidden" max="1"></progress>
+            <p id="semifDetail" class="message"></p>
+          </section>
+
+          <div class="run-bar">
+            <div>
+              <label for="repetitions">Ripetizioni Jev</label>
+              <select id="repetitions">
+                <option value="1" selected>1 run</option>
+                <option value="3">3 run</option>
+                <option value="5">5 run</option>
+              </select>
+            </div>
+            <button id="runSemif" class="button secondary" type="button" disabled>Chiedi a SemIf</button>
+            <button id="runEvaluation" class="button primary" type="button">Chiedi a Jev</button>
+          </div>
+          <p id="runMessage" class="message" role="status"></p>
+        </section>
+        <section class="results-section" aria-labelledby="results-title">
+          <div class="section-heading">
+            <span>03</span>
+            <div>
+              <h2 id="results-title">Risultati</h2>
+              <p>Probabilità, stabilità, tempi ed eventuale confronto con l'etichetta ufficiale. Se Jev e SemIf hanno valutato lo stesso input, le risposte compaiono affiancate.</p>
+            </div>
+            <button id="downloadResult" class="button secondary hidden" type="button">Scarica JSON</button>
+          </div>
+
+          <div id="runStats" class="run-stats"></div>
+          <div id="answerCards" class="answer-grid empty-results">
+            Eseguite una valutazione per vedere i risultati.
+          </div>
+
+          <details id="rawDetails" class="raw-panel hidden">
+            <summary>JSON grezzo</summary>
+            <pre id="rawOutput"></pre>
+          </details>
+        </section>
+      </section>
+
+      <section class="method-section">
+        <div class="section-heading">
+          <span>04</span>
+          <div>
+            <h2>Come leggere il test</h2>
+          </div>
+        </div>
+        <div class="method-grid">
+          <article>
+            <h3>Accuratezza</h3>
+            <p>Quando esiste un'etichetta ufficiale, confrontiamo la scelta di Jev con una normalizzazione dichiarata. Non è una verità assoluta, ma un riferimento ispezionabile.</p>
+          </article>
+          <article>
+            <h3>Incertezza</h3>
+            <p>Guardate la distribuzione, non soltanto il vincitore. Un 51% contro 49% richiede un comportamento diverso da un 99% contro 1%.</p>
+          </article>
+          <article>
+            <h3>Stabilità</h3>
+            <p>Ripetete la stessa valutazione tre o cinque volte. Se la scelta cambia spesso, il workflow deve prevedere una soglia o un fallback.</p>
+          </article>
+          <article>
+            <h3>Limiti</h3>
+            <p>TED usa CPV e natura del contratto come riferimenti; openFDA, CPSC e Safety Gate pubblicano richiami già classificati; Incentivi.gov.it usa le categorie del proprio catalogo; deepset e CLINC150 sono dataset di ricerca. Nessun dataset dimostra da solo l'affidabilità in produzione.</p>
+          </article>
+        </div>
+        <div class="local-alternative">
+          <strong>Senza carta si prova con SemIf.</strong>
+          <span>Il secondo motore del lab è SemIf, il suo codice senza modifiche, su modelli aperti: stesse domande, stesse etichette, risultati affiancati a Jev. Non è Jev e non ne replica la calibrazione.</span>
+          <a href="https://openjev.com/" target="_blank" rel="noreferrer">Il progetto SemIf</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>AI, MAX · Enjoy Artificial Intelligence Responsibly!</p>
+      <p>Lab locale. Nessun input viene scritto su disco.</p>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

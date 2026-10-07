@@ -1,0 +1,39 @@
+{
+  "fda_classification": {
+    "type": "choice",
+    "instructions": "Predict the FDA health-hazard class using the reason for recall and product context. The official classification is deliberately withheld.",
+    "criteria": {
+      "class_i": "Dangerous or defective product with a reasonable probability of serious adverse health consequences or death.",
+      "class_ii": "Product may cause temporary or medically reversible adverse health consequences, or the probability of serious consequences is remote.",
+      "class_iii": "Product is unlikely to cause adverse health consequences but violates FDA labeling or manufacturing requirements."
+    }
+  },
+  "operational_priority": {
+    "type": "score",
+    "instructions": "Rate the urgency for the recalling firm’s cross-functional business response.",
+    "criteria": [
+      "Low: administrative or labeling correction with unlikely health impact.",
+      "Moderate: limited or reversible health impact with a contained operational response.",
+      "High: material health risk, broad distribution, or significant quality-system exposure.",
+      "Critical: potential death or serious harm requiring immediate executive, regulatory, and customer action."
+    ]
+  },
+  "response_owner": {
+    "type": "choice",
+    "instructions": "Choose the business function that should coordinate the first response while other functions support it.",
+    "criteria": {
+      "quality_regulatory": "Quality assurance and regulatory affairs lead containment and authority coordination.",
+      "supply_chain": "Operations and supply chain lead product hold, traceability, and distribution control.",
+      "customer_communications": "Customer service and communications lead outreach and remedy execution.",
+      "legal_executive": "Legal and executive leadership lead because exposure is potentially material or crisis-level."
+    }
+  },
+  "executive_escalation": {
+    "type": "boolean",
+    "instructions": "Should this recall be escalated immediately to senior risk, legal, or executive leadership?",
+    "criteria": {
+      "true": "Potential serious harm or death, broad distribution, vulnerable users, regulatory exposure, or material brand impact.",
+      "false": "Contained, low-severity correction that can follow a standard quality workflow."
+    }
+  }
+}

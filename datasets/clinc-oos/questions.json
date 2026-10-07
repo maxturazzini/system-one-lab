@@ -1,0 +1,33 @@
+{
+  "reparto_con_uscita": {
+    "type": "choice",
+    "instructions": "Instrada il messaggio del cliente al reparto competente. Se la richiesta non riguarda nessun reparto della banca, scegli fuori_perimetro.",
+    "criteria": {
+      "conti_e_movimenti": "Saldo, movimenti, storico delle spese, coordinate del conto, tassi del conto, libretti di assegni.",
+      "pagamenti_e_bollette": "Bonifici, trasferimenti fra conti, pagamento e scadenza delle bollette.",
+      "sicurezza_e_blocchi": "Conto bloccato o da bloccare, frodi, PIN, carta smarrita o danneggiata e tempi di sostituzione.",
+      "carte_di_credito": "Nuova carta di credito, stato della richiesta, fido, TAEG, commissioni estere, scadenza, pagamento minimo, carta rifiutata.",
+      "punti_e_merito_creditizio": "Punti e premi della carta, punteggio di credito e come migliorarlo.",
+      "fuori_perimetro": "La richiesta non riguarda nessuno dei reparti elencati."
+    }
+  },
+  "reparto_senza_uscita": {
+    "type": "choice",
+    "instructions": "Instrada il messaggio del cliente al reparto competente.",
+    "criteria": {
+      "conti_e_movimenti": "Saldo, movimenti, storico delle spese, coordinate del conto, tassi del conto, libretti di assegni.",
+      "pagamenti_e_bollette": "Bonifici, trasferimenti fra conti, pagamento e scadenza delle bollette.",
+      "sicurezza_e_blocchi": "Conto bloccato o da bloccare, frodi, PIN, carta smarrita o danneggiata e tempi di sostituzione.",
+      "carte_di_credito": "Nuova carta di credito, stato della richiesta, fido, TAEG, commissioni estere, scadenza, pagamento minimo, carta rifiutata.",
+      "punti_e_merito_creditizio": "Punti e premi della carta, punteggio di credito e come migliorarlo."
+    }
+  },
+  "richiesta_bancaria": {
+    "type": "boolean",
+    "instructions": "Il messaggio riguarda un servizio che il servizio clienti di una banca può gestire?",
+    "criteria": {
+      "true": "Richiesta su conti, pagamenti, carte, sicurezza, premi o merito creditizio.",
+      "false": "Richiesta estranea ai servizi della banca, anche se parla di soldi in generale."
+    }
+  }
+}

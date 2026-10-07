@@ -1,0 +1,30 @@
+{
+  "reparto": {
+    "type": "choice",
+    "instructions": "A quale ufficio va inoltrata l'email?",
+    "criteria": {
+      "amministrazione": "Fatture, pagamenti, solleciti, dati di fatturazione, note di credito.",
+      "assistenza": "Guasti, difetti, ricambi, feedback o problemi su un prodotto o un servizio già acquistato, richieste di intervento.",
+      "commerciale": "Richieste di preventivo, informazioni su prodotti, nuove forniture o collaborazioni.",
+      "da_scartare": "Spam, phishing o pubblicità non richiesta."
+    }
+  },
+  "urgente": {
+    "type": "boolean",
+    "instructions": "L'email richiede una risposta entro oggi?",
+    "criteria": {
+      "true": "C'è un fermo produttivo, una scadenza imminente, un rischio economico concreto o un cliente bloccato.",
+      "false": "La richiesta può essere gestita nei tempi normali, oppure il messaggio va solo scartato."
+    }
+  },
+  "frustrazione_mittente": {
+    "type": "score",
+    "instructions": "Quanto è frustrato chi scrive?",
+    "criteria": [
+      "Nessuna: tono neutro o cordiale.",
+      "Lieve: qualche segno di impazienza.",
+      "Evidente: lamentela esplicita.",
+      "Alta: minaccia di cambiare fornitore, toni accesi o richiesta di parlare con la direzione."
+    ]
+  }
+}

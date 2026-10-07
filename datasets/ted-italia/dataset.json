@@ -1,0 +1,27 @@
+{
+  "name": "TED gare pubbliche italiane",
+  "owner": "Ufficio delle pubblicazioni dell’Unione europea",
+  "businessQuestion": "Jev sa riportare la classificazione ufficiale di una gara, tutta in chiaro, al team commerciale giusto?",
+  "sourceUrl": "https://ted.europa.eu/it/",
+  "apiUrl": "https://api.ted.europa.eu/v3/notices/search",
+  "license": "Dati pubblici TED riutilizzabili secondo le note legali UE",
+  "freshness": "Nuovi avvisi pubblicati ogni giorno",
+  "warning": "Codici CPV e natura del contratto sono in chiaro nello state: il test misura la traduzione nelle categorie proprie del lab. La comprensione del testo libero è un'altra prova. Molti bandi sono lotti dello stesso appalto. Un match di settore non implica che l’azienda possieda i requisiti per partecipare.",
+  "queryLabel": "Parola facoltativa nel bando",
+  "queryPlaceholder": "es. software, formazione, manutenzione",
+  "maxBatch": 3,
+  "order": 20,
+  "profileKey": "profilo_azienda",
+  "source": {
+    "adapter": "ted",
+    "params": {
+      "filters": [
+        "buyer-country=ITA",
+        "publication-date>=today(-30)"
+      ],
+      "scope": "ACTIVE",
+      "requireCpv": true,
+      "minFetch": 10
+    }
+  }
+}

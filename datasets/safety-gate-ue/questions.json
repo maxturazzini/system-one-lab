@@ -1,0 +1,39 @@
+{
+  "tipo_rischio": {
+    "type": "choice",
+    "instructions": "Classifica il rischio principale descritto nell’allerta.",
+    "criteria": {
+      "scossa_elettrica": "Scossa elettrica, elettrocuzione o guasto elettrico pericoloso.",
+      "rischio_chimico": "Sostanze chimiche vietate o oltre i limiti: metalli pesanti, ftalati, formaldeide, allergeni nei cosmetici.",
+      "soffocamento": "Ostruzione delle vie aeree, soffocamento, strangolamento o piccole parti ingeribili.",
+      "incendio_ustioni": "Incendio, surriscaldamento, esplosione o ustioni.",
+      "lesioni_tagli": "Lesioni fisiche, tagli, schiacciamenti, cadute o rotture.",
+      "vista_udito": "Danni alla vista, ad esempio da laser, o all’udito.",
+      "ambiente": "Danno all’ambiente, ad esempio inquinanti persistenti o sostanze vietate nello smaltimento.",
+      "altro": "Annegamento, rischio microbiologico o un altro rischio per la salute."
+    }
+  },
+  "misura_adottata": {
+    "type": "choice",
+    "instructions": "Stima la misura principale adottata dall’operatore economico o imposta dall’autorità. La misura ufficiale è nascosta.",
+    "criteria": {
+      "richiamo_consumatori": "Richiamo del prodotto presso chi lo ha già acquistato.",
+      "ritiro_dal_mercato": "Ritiro del prodotto dalla distribuzione e dai punti vendita.",
+      "rimozione_online": "Rimozione dell’offerta da un marketplace o da un negozio online.",
+      "stop_vendite": "Divieto di commercializzazione o cessazione volontaria delle vendite.",
+      "respinto_o_distrutto": "Importazione respinta alla frontiera o distruzione del prodotto.",
+      "avvertenze": "Avvisi ai consumatori o ai venditori, oppure nuove avvertenze sul prodotto.",
+      "altro": "Un’altra misura."
+    }
+  },
+  "urgenza_distributore": {
+    "type": "score",
+    "instructions": "Un distributore italiano ha questo prodotto a magazzino o nel proprio e-commerce. Quanto è urgente agire?",
+    "criteria": [
+      "Bassa: verifica ordinaria alla prossima revisione del catalogo.",
+      "Media: controllo dei lotti e delle schede prodotto entro qualche giorno.",
+      "Alta: blocco delle vendite e verifica dei lotti in giornata.",
+      "Critica: blocco immediato, richiamo verso i clienti e coinvolgimento di legale e direzione."
+    ]
+  }
+}
