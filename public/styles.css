@@ -48,18 +48,21 @@ button { cursor: pointer; }
 
 h1 {
   margin: 0;
-  max-width: 850px;
-  font-size: clamp(52px, 8vw, 116px);
-  line-height: 0.85;
+  font-size: clamp(40px, 6.4vw, 108px);
+  line-height: 0.9;
   letter-spacing: -0.065em;
 }
 
 .lede {
-  max-width: 650px;
   margin: 28px 0 0;
   font-size: clamp(18px, 2vw, 25px);
   line-height: 1.35;
   color: var(--muted);
+}
+
+/* Titolo e sottotitolo su una riga sola, dove lo schermo è abbastanza largo. */
+@media (min-width: 1000px) {
+  h1, .lede { white-space: nowrap; }
 }
 
 /* Logo e bolla ufficiali del design system AI, MAX, in alto a destra. */
@@ -153,6 +156,33 @@ main {
   gap: 14px;
   margin-bottom: 24px;
 }
+
+/* Le intestazioni delle tre colonne restano ferme mentre il contenuto scorre sotto:
+   in cima al pannello quando il pannello scorre, a 18px dalla finestra quando scorre la pagina.
+   I pannelli non hanno padding in alto: lo spazio lo dà l'intestazione. Così Chrome e Safari,
+   che misurano "top" in modo diverso quando il contenitore ha padding, la fermano allo stesso punto
+   e il testo che scorre non spunta sopra il titolo. */
+.workspace > .dataset-panel,
+.workspace > .editor-panel,
+.workspace > .results-section { padding-top: 0; }
+
+.dataset-panel > .section-heading,
+.editor-panel > .section-heading,
+.results-section > .section-heading {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 -24px 24px;
+  padding: 24px 24px 16px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: #fefcf7;
+  box-shadow: 0 1px 0 var(--line);
+}
+.results-section > .section-heading { margin: 0 -26px 24px; padding: 26px 26px 16px; }
+
+/* La colonna centrale scorre con la pagina: si ferma a 18px come le altre due,
+   e una fascia del colore di fondo copre il contenuto che passa sopra. */
+.editor-panel > .section-heading { top: 18px; box-shadow: 0 1px 0 var(--line), 0 -19px 0 0 var(--paper); }
 
 .section-heading > span {
   display: grid;

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 400" width="440" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-90 0 570 330" width="570" height="330">
+  <!-- bubble agent v2 · posa: corsa · gradiente skyGreen · iper-velocità: inclinazione, scie e linee di velocità. Base: aimax-animation/assets/bubble-v2/bubble_v2_05 -->
   <defs>
     <linearGradient id="bodyGrad" gradientUnits="userSpaceOnUse" x1="80" y1="38" x2="360" y2="270">
       <stop offset="0%" stop-color="#35C2FF"/>
@@ -12,8 +13,13 @@
       <stop offset="0%" stop-color="#000000" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <g id="hand">
-      <path d="M -8 -6
+    <g id="bubbleShape">
+      <path d="M 80 134 C 80 80.97, 142.68 38, 220 38 C 297.32 38, 360 80.97, 360 134 C 360 187.03, 297.32 230, 220 230 C 142.68 230, 80 187.03, 80 134 Z"/>
+      <path d="M 146 199 L 192 210 L 130 252 Z"/>
+    </g>
+
+    <g id="hOpen">
+      <path transform="scale(1.3)" d="M -8 -6
         C -11.5 -4.5, -13.5 -1, -13.8 3
         C -19.5 3.2, -24 7.8, -23 12.2
         C -22 15.6, -18 16, -15.2 13.2
@@ -29,33 +35,71 @@
         C 8.2 -5, 6 -6.2, 3.8 -6.4
         Z"/>
     </g>
-    <g id="bubbleShape">
-      <path d="M 80 134 C 80 80.97, 142.68 38, 220 38 C 297.32 38, 360 80.97, 360 134 C 360 187.03, 297.32 230, 220 230 C 142.68 230, 80 187.03, 80 134 Z"/>
-      <path d="M 138 196 L 196 210 L 116 272 Z"/>
+    <g id="hFist">
+      <circle cx="0" cy="11" r="15"/>
+      <ellipse cx="-13" cy="6" rx="7" ry="9" transform="rotate(20 -13 6)"/>
     </g>
+    <g id="hPoint">
+      <circle cx="0" cy="10" r="14"/>
+      <ellipse cx="-12" cy="6" rx="6.5" ry="8.5" transform="rotate(20 -12 6)"/>
+      <rect x="-5.5" y="12" width="11" height="30" rx="5.5"/>
+    </g>
+    <g id="hThumb">
+      <rect x="-18" y="-2" width="36" height="30" rx="11"/>
+      <rect x="-1" y="18" width="15" height="22" rx="7.5"/>
+    </g>
+    <g id="hRound">
+      <circle cx="0" cy="11" r="15"/>
+    </g>
+    <g id="shoe">
+      <path d="M -13 -4 C -13 -13, 0 -15, 9 -11 C 20 -7, 28 -2, 28 5 C 28 10, 24 12, 18 12 L -8 12 C -12 12, -14 9, -14 5 Z"/>
+    </g>
+    <linearGradient id="speedGrad" gradientUnits="userSpaceOnUse" x1="-90" y1="0" x2="110" y2="0">
+      <stop offset="0%" stop-color="#35C2FF" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#00D35D" stop-opacity="0.9"/>
+    </linearGradient>
   </defs>
 
-  <ellipse cx="220" cy="358" rx="130" ry="16" fill="url(#shadowGrad)"/>
+  <ellipse cx="190" cy="312" rx="170" ry="10" fill="url(#shadowGrad)"/>
 
-  <path d="M 188 190 L 188 341 Q 188 349, 176 349" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
-  <path d="M 252 190 L 252 341 Q 252 349, 264 349" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
-
-  <path d="M 95 185 C 66 210, 52 250, 56 286" fill="none" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
-  <use href="#hand" transform="translate(56,286) scale(-1,1) rotate(-14)" fill="#1a1a1a"/>
-  <path d="M 345 185 C 374 210, 388 250, 384 286" fill="none" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
-  <use href="#hand" transform="translate(384,286) rotate(-14)" fill="#1a1a1a"/>
-
-  <g fill="url(#sideGrad)">
-    <use href="#bubbleShape" transform="translate(1,1.15)"/>
-    <use href="#bubbleShape" transform="translate(2,2.3)"/>
-    <use href="#bubbleShape" transform="translate(3,3.45)"/>
-    <use href="#bubbleShape" transform="translate(4,4.6)"/>
-    <use href="#bubbleShape" transform="translate(5,5.75)"/>
-    <use href="#bubbleShape" transform="translate(6,6.9)"/>
-    <use href="#bubbleShape" transform="translate(7,8)"/>
+  
+  <!-- linee di velocità -->
+  <g stroke="url(#speedGrad)" stroke-linecap="round" fill="none">
+    <path d="M -80 70 H 60" stroke-width="9"/>
+    <path d="M -40 105 H 75" stroke-width="6"/>
+    <path d="M -85 140 H 50" stroke-width="11"/>
+    <path d="M -55 178 H 40" stroke-width="7"/>
+    <path d="M -75 250 H 110" stroke-width="8"/>
+    <path d="M -30 285 H 90" stroke-width="5"/>
   </g>
-  <use href="#bubbleShape" fill="url(#bodyGrad)"/>
+  <!-- scie del corpo -->
+  <use href="#bubbleShape" transform="translate(-70,6) skewX(-14)" fill="#35C2FF" opacity="0.12"/>
+  <use href="#bubbleShape" transform="translate(-36,3) skewX(-14)" fill="#00D35D" opacity="0.22"/>
+  <g transform="translate(220,300) skewX(-14) translate(-220,-300)">
+  <path d="M 190 222 C 188 258, 170 272, 148 280" fill="none" stroke="#1a1a1a" stroke-width="20" stroke-linecap="round"/>
+  <use href="#shoe" transform="translate(148,280) rotate(28) scale(-1,1)" fill="#1a1a1a"/>
+  <path d="M 250 222 C 264 248, 292 258, 296 290" fill="none" stroke="#1a1a1a" stroke-width="20" stroke-linecap="round"/>
+  <use href="#shoe" transform="translate(296,290) rotate(0) scale(1,1)" fill="#1a1a1a"/>
 
-  <ellipse cx="181.5" cy="125" rx="12.25" ry="27" fill="#ffffff"/>
-  <ellipse cx="258.5" cy="125" rx="12.25" ry="27" fill="#ffffff"/>
+  <g transform="rotate(7 220 240)">
+  <path d="M 112 182 C 80 196, 60 214, 42 204" fill="none" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/>
+  <use href="#hFist" transform="translate(42,204) rotate(-240.9) scale(-1,1)" fill="#1a1a1a"/>
+  <path d="M 328 176 C 368 188, 392 166, 396 136" fill="none" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/>
+  <use href="#hFist" transform="translate(396,136) rotate(-172.4) scale(-1,1)" fill="#1a1a1a"/>
+
+    <g fill="url(#sideGrad)">
+      <use href="#bubbleShape" transform="translate(1,1.15)"/>
+      <use href="#bubbleShape" transform="translate(2,2.3)"/>
+      <use href="#bubbleShape" transform="translate(3,3.45)"/>
+      <use href="#bubbleShape" transform="translate(4,4.6)"/>
+      <use href="#bubbleShape" transform="translate(5,5.75)"/>
+      <use href="#bubbleShape" transform="translate(6,6.9)"/>
+      <use href="#bubbleShape" transform="translate(7,8)"/>
+    </g>
+    <use href="#bubbleShape" fill="url(#bodyGrad)"/>
+
+    <ellipse cx="180" cy="124" rx="14.7" ry="32.4" fill="#ffffff"/>
+    <ellipse cx="260" cy="124" rx="14.7" ry="32.4" fill="#ffffff"/>
+  </g>
+  </g>
 </svg>
